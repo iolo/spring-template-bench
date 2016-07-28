@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8"/>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+<ul>
+    <% comments.forEach(function (comment) { %>
+    <li>
+        <h5><%= comment.author %></h5>
+        <p><%= comment.content %></p>
+    </li>
+    <% }); %>
+</ul>
+</body>
+</html>

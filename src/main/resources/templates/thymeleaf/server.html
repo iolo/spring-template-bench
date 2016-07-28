@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"></title>
+</head>
+<body>
+<ul th:each="it : ${comments}">
+    <li>
+        <h5 th:text="${it.author}">author</h5>
+        <p th:text="${it.content}">content</p>
+    </li>
+</ul>
+</body>
+</html>
