@@ -41,7 +41,7 @@ public class DemoController {
     public String reactNashorn(Model model) throws Exception {
         model.addAttribute("title", profilesActive);
         model.addAttribute("reactHtml", reactDOMServerNashorn.render(demoService.getComments()));
-        return "isomorphic";
+        return "react";
     }
 
     @Autowired
@@ -52,6 +52,14 @@ public class DemoController {
         model.addAttribute("title", profilesActive);
         model.addAttribute("reactHtml", reactDOMServerV8.render(demoService.getComments()));
         return "react";
+    }
+
+    // BETTER ISOMORPHIC but v8 + ejs only!
+    @RequestMapping("/react/v8ejs")
+    public String v8(Model model) {
+        model.addAttribute("title", profilesActive);
+        model.addAttribute("comments", demoService.getComments());
+        return "react_v8ejs";
     }
 
     @RequestMapping("/apis/v1/comments")

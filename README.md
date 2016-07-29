@@ -15,8 +15,9 @@ profiles:
 - [freemarker]
 - [velocity]
 - [jsp]
-- [handlebars] (with [nashorn])
-- [ejs] (with [nashorn])
+- [handlebars] (with [ScriptTemplateView] with [nashorn] engine)
+- [ejs] (with [ScriptTemplateView] using [nashorn] engine)
+- [v8ejs] (with custom template view using [v8] only)
 - ...
 
 endpoints:
@@ -24,6 +25,7 @@ endpoints:
 - server-side template on http://localhost:8080/
 - [react] *server-side* rendering with [nashorn] on http://localhost:8080/react/nashorn
 - [react] *server-side* rendering with [j2v8] on http://localhost:8080/react/v8
+- [react] *better isomorphic* rendering(`v8ejs` profile only) with [j2v8] on http://localhost:8080/react/v8ejs
 - [react] *client-side* rendering on http://localhost:8080/react.html
 - ...
 
@@ -47,6 +49,7 @@ may the **SOURCE** be with you...
 [jsp]:http://www.oracle.com/technetwork/java/javaee/jsp/index.html
 [handlebars]:http://handlebarsjs.com
 [ejs]:http://ejs.co
+[ScriptTemplateView]:http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/view/script/ScriptTemplateView.html
 [nashorn]:http://openjdk.java.net/projects/nashorn/
 [j2v8]:https://github.com/eclipsesource/J2V8
 [react]:https://facebook.github.io/react/

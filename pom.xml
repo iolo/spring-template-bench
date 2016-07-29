@@ -134,6 +134,17 @@
                             <arguments>run babel</arguments>
                         </configuration>
                     </execution>
+                    <!-- FIXME: browserify 돌리려면 require(ES6 import)가 필요한데... nashorn은 require를 지원하지 않음.
+                    <execution>
+                        <id>npm run bundle</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>run bundle</arguments>
+                        </configuration>
+                    </execution>
+                    -->
                 </executions>
             </plugin>
         </plugins>

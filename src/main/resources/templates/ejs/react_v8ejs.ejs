@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+<meta charset="UTF-8"/>
 <head>
-    <meta charset="UTF-8"/>
-    <title th:text="${title}"></title>
+    <title><%= title %></title>
 </head>
 <body>
-<div id="main" th:utext="${reactHtml}"></div>
+<div id="main"><%- ReactDOMServer.renderToString(React.createElement(CommentList, {comments: comments})) %></div>
 <script src="/webjars/jquery/3.1.0/dist/jquery.min.js"></script>
 <script src="/webjars/react/15.2.1/react.min.js"></script>
 <script src="/webjars/react/15.2.1/react-dom.min.js"></script>

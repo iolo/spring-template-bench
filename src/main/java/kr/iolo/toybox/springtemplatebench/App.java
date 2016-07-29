@@ -57,9 +57,9 @@ public class App {
             ScriptTemplateConfigurer bean = new ScriptTemplateConfigurer();
             bean.setEngineName("nashorn");
             bean.setScripts(
-                    "/server-scripts/polyfill.js",
+                    "/server-scripts/nashorn-polyfill.js",
                     "/META-INF/resources/webjars/handlebars/4.0.5/handlebars.min.js",
-                    "/server-scripts/handlebars-render.js"
+                    "/server-scripts/nashorn-handlebars-render.js"
             );
             bean.setRenderFunction("render");
             bean.setSharedEngine(false);
@@ -78,14 +78,15 @@ public class App {
     @Configuration
     @Profile("ejs")
     public static class EjsConfig {
+
         @Bean
         public ScriptTemplateConfigurer scriptTemplateConfigurer() {
             ScriptTemplateConfigurer bean = new ScriptTemplateConfigurer();
             bean.setEngineName("nashorn");
             bean.setScripts(
-                    "/server-scripts/polyfill.js",
+                    "/server-scripts/nashorn-polyfill.js",
                     "/META-INF/resources/webjars/ejs/2.4.1/ejs-v2.4.1/ejs.min.js",
-                    "/server-scripts/ejs-render.js"
+                    "/server-scripts/nashorn-ejs-render.js"
             );
             bean.setRenderFunction("render");
             bean.setSharedEngine(false);
@@ -95,6 +96,19 @@ public class App {
         @Bean
         public ViewResolver viewResolver() {
             ScriptTemplateViewResolver bean = new ScriptTemplateViewResolver();
+            bean.setPrefix("classpath:/templates/ejs/");
+            bean.setSuffix(".ejs");
+            return bean;
+        }
+    }
+
+    @Configuration
+    @Profile("v8ejs")
+    public static class V8EjsConfig {
+
+        @Bean
+        public ViewResolver viewResolver() {
+            V8TemplateViewResolver bean = new V8TemplateViewResolver();
             bean.setPrefix("classpath:/templates/ejs/");
             bean.setSuffix(".ejs");
             return bean;

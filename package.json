@@ -12,6 +12,6 @@
   },
   "scripts": {
     "babel": "babel src/main/react -d target/classes/static",
-    "browserify": "browserify -t [ babelify ] --extension .jsx src/main/react/app.jsx -o target/classes/static/app.bundle.js"
+    "bundle": "browserify -t [ babelify ] --extension .jsx src/main/react/app.jsx -o target/classes/static/bundle.js"
   }
 }
