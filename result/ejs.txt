@@ -1,0 +1,213 @@
+ejs
+----------
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient).....done
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /
+Document Length:        342 bytes
+
+Concurrency Level:      4
+Time taken for tests:   1.263 seconds
+Complete requests:      100
+Failed requests:        0
+Total transferred:      54000 bytes
+HTML transferred:       34200 bytes
+Requests per second:    79.18 [#/sec] (mean)
+Time per request:       50.517 [ms] (mean)
+Time per request:       12.629 [ms] (mean, across all concurrent requests)
+Transfer rate:          41.76 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing:     3   50 184.4      4     932
+Waiting:        3   50 184.0      4     931
+Total:          3   50 184.3      4     933
+
+Percentage of the requests served within a certain time (ms)
+  50%      4
+  66%      4
+  75%      5
+  80%      5
+  90%    152
+  95%    155
+  98%    932
+  99%    933
+ 100%    933 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient).....done
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /react/nashorn
+Document Length:        941 bytes
+
+Concurrency Level:      4
+Time taken for tests:   61.694 seconds
+Complete requests:      100
+Failed requests:        0
+Total transferred:      113900 bytes
+HTML transferred:       94100 bytes
+Requests per second:    1.62 [#/sec] (mean)
+Time per request:       2467.747 [ms] (mean)
+Time per request:       616.937 [ms] (mean, across all concurrent requests)
+Transfer rate:          1.80 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing:  1078 2451 891.7   2238    4796
+Waiting:     1078 2451 891.7   2238    4796
+Total:       1079 2451 891.7   2238    4796
+
+Percentage of the requests served within a certain time (ms)
+  50%   2238
+  66%   2553
+  75%   2958
+  80%   3233
+  90%   3783
+  95%   4312
+  98%   4790
+  99%   4796
+ 100%   4796 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient).....done
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /react/v8
+Document Length:        941 bytes
+
+Concurrency Level:      4
+Time taken for tests:   3.961 seconds
+Complete requests:      100
+Failed requests:        0
+Total transferred:      113900 bytes
+HTML transferred:       94100 bytes
+Requests per second:    25.25 [#/sec] (mean)
+Time per request:       158.421 [ms] (mean)
+Time per request:       39.605 [ms] (mean, across all concurrent requests)
+Transfer rate:          28.08 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   1.8      0      12
+Processing:   129  155  37.0    144     310
+Waiting:      129  155  37.0    143     310
+Total:        129  156  36.8    144     310
+
+Percentage of the requests served within a certain time (ms)
+  50%    144
+  66%    147
+  75%    155
+  80%    158
+  90%    175
+  95%    280
+  98%    309
+  99%    310
+ 100%    310 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient).....done
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /react/v8ejs
+Document Length:        285 bytes
+
+Concurrency Level:      4
+Time taken for tests:   0.316 seconds
+Complete requests:      100
+Failed requests:        0
+Non-2xx responses:      100
+Total transferred:      46900 bytes
+HTML transferred:       28500 bytes
+Requests per second:    316.91 [#/sec] (mean)
+Time per request:       12.622 [ms] (mean)
+Time per request:       3.155 [ms] (mean, across all concurrent requests)
+Transfer rate:          145.15 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing:     3   12  24.0      5     111
+Waiting:        3   12  23.9      5     110
+Total:          4   13  24.0      5     111
+
+Percentage of the requests served within a certain time (ms)
+  50%      5
+  66%      6
+  75%      6
+  80%      6
+  90%     52
+  95%     63
+  98%    111
+  99%    111
+ 100%    111 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient).....done
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /react.html
+Document Length:        503 bytes
+
+Concurrency Level:      4
+Time taken for tests:   0.071 seconds
+Complete requests:      100
+Failed requests:        0
+Total transferred:      75500 bytes
+HTML transferred:       50300 bytes
+Requests per second:    1415.35 [#/sec] (mean)
+Time per request:       2.826 [ms] (mean)
+Time per request:       0.707 [ms] (mean, across all concurrent requests)
+Transfer rate:          1043.54 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       0
+Processing:     1    3   1.9      2      12
+Waiting:        1    2   1.9      2      11
+Total:          2    3   1.9      2      12
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      2
+  75%      3
+  80%      3
+  90%      4
+  95%      5
+  98%     12
+  99%     12
+ 100%     12 (longest request)
