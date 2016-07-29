@@ -3,6 +3,7 @@ package kr.iolo.toybox.springtemplatebench;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
 import org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration;
 import org.springframework.boot.autoconfigure.velocity.VelocityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.view.script.ScriptTemplateViewResolver;
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = {
         ThymeleafAutoConfiguration.class,
+        FreeMarkerAutoConfiguration.class,
         VelocityAutoConfiguration.class
 })
 public class App {
@@ -31,9 +33,20 @@ public class App {
     }
 
     @Configuration
+    @Profile("freemarker")
+    @Import(FreeMarkerAutoConfiguration.class)
+    public static class FreemarkerConfig {
+    }
+
+    @Configuration
     @Profile("velocity")
     @Import(VelocityAutoConfiguration.class)
     public static class VelocityConfig {
+    }
+
+    @Configuration
+    @Profile("jsp")
+    public static class JspConfig {
     }
 
     @Configuration

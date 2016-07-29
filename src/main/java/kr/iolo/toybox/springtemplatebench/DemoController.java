@@ -51,7 +51,7 @@ public class DemoController {
     public String reactV8(Model model) throws Exception {
         model.addAttribute("title", profilesActive);
         model.addAttribute("reactHtml", reactDOMServerV8.render(demoService.getComments()));
-        return "isomorphic";
+        return "react";
     }
 
     @RequestMapping("/apis/v1/comments")
