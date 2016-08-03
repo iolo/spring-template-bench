@@ -1,21 +1,26 @@
 package kr.iolo.toybox.springtemplatebench;
 
+import javax.persistence.*;
+import java.util.Date;
+
 /**
  * @author iolo
  */
+@Entity
 public class Comment {
 
+    @Id
+    @GeneratedValue
     private Long id;
+    @Column
     private String author;
+    @Column
     private String content;
+    @Column
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
 
     public Comment() {
-    }
-
-    public Comment(Long id, String author, String content) {
-        this.id = id;
-        this.author = author;
-        this.content = content;
     }
 
     public Long getId() {
@@ -42,12 +47,21 @@ public class Comment {
         this.content = content;
     }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
     @Override
     public String toString() {
         return "Comment{" +
                 "id=" + id +
                 ", author='" + author + '\'' +
                 ", content='" + content + '\'' +
+                ", createdAt='" + createdAt + '\'' +
                 '}';
     }
 
