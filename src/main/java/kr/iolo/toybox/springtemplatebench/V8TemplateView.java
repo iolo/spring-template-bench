@@ -3,7 +3,6 @@ package kr.iolo.toybox.springtemplatebench;
 import com.eclipsesource.v8.V8;
 import com.eclipsesource.v8.V8Array;
 import com.eclipsesource.v8.V8Value;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.servlet.view.AbstractUrlBasedView;
 
@@ -22,16 +21,6 @@ import java.util.Map;
  */
 public class V8TemplateView extends AbstractUrlBasedView {
 
-    private static final String[] SCRIPTS = {
-            "/server-scripts/v8-polyfill.js",
-            "/META-INF/resources/webjars/ejs/2.4.1/ejs-v2.4.1/ejs.min.js",
-            "/META-INF/resources/webjars/react/15.2.1/react.min.js",
-            "/META-INF/resources/webjars/react/15.2.1/react-dom-server.min.js",
-            "/static/Comment.js",
-            "/static/CommentList.js",
-            "/server-scripts/v8-ejs-render.js"
-    };
-
     public V8TemplateView() {
         this.setContentType(null);
     }
@@ -46,11 +35,7 @@ public class V8TemplateView extends AbstractUrlBasedView {
             Map<String, Object> map,
             HttpServletRequest req,
             HttpServletResponse res) throws Exception {
-        //final NodeJS nodeJS = NodeJS.createNodeJS();
-        final V8 v8 = V8.createV8Runtime();
-        for (final String script : SCRIPTS) {
-            v8.executeVoidScript(FileCopyUtils.copyToString(new InputStreamReader(new ClassPathResource(script).getInputStream())));
-        }
+        final V8 v8 = V8Utils.getV8Runtime();
         final String url = getUrl();
         final String template = FileCopyUtils.copyToString(new InputStreamReader(getApplicationContext().getResource(url).getInputStream()));
         final V8Value arg = V8Utils.toV8Object(v8, map);

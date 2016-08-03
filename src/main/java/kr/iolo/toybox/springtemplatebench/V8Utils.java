@@ -5,8 +5,11 @@ import com.eclipsesource.v8.V8Array;
 import com.eclipsesource.v8.V8Object;
 import com.eclipsesource.v8.V8Value;
 import org.springframework.beans.BeanUtils;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.util.FileCopyUtils;
 
 import java.beans.PropertyDescriptor;
+import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.util.Map;
 
@@ -17,6 +20,37 @@ import java.util.Map;
  * @see com.eclipsesource.v8.utils.V8ObjectUtils
  */
 public class V8Utils {
+    private static final String[] SCRIPTS = {
+            "/server-scripts/v8-polyfill.js",
+            "/META-INF/resources/webjars/ejs/2.4.1/ejs-v2.4.1/ejs.min.js",
+            "/META-INF/resources/webjars/react/15.2.1/react.js",
+            "/META-INF/resources/webjars/react/15.2.1/react-dom-server.js",
+            "/static/Comment.js",
+            "/static/CommentList.js",
+            "/server-scripts/react-v8.js",
+            "/server-scripts/v8-ejs-render.js"
+    };
+
+    private static ThreadLocal<V8> v8Holder = new ThreadLocal<V8>() {
+        @Override
+        protected V8 initialValue() {
+            final V8 v8 = V8.createV8Runtime();
+            for (final String script : SCRIPTS) {
+                try {
+                    v8.executeVoidScript(FileCopyUtils.copyToString(new InputStreamReader(new ClassPathResource(script).getInputStream())));
+                } catch (Throwable t) {
+                    System.err.println("failed to load v8 script: " + script);
+                    t.printStackTrace(System.err);
+                }
+            }
+            return v8;
+        }
+    };
+
+    public static V8 getV8Runtime() throws Exception {
+        return v8Holder.get();
+    }
+
 
     public static V8Object toV8Object(V8 v8, Map map) {
         final V8Object v8obj = new V8Object(v8);
