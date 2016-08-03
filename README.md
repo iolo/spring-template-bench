@@ -29,6 +29,21 @@ endpoints:
 - [react] *client-side* rendering on http://localhost:8080/react.html
 - ...
 
+result on my laptop:
+
+- MacBook Pro (Retina, 15-inch, Mid 2014)
+- 2.5 GHz Intel Core i7, : 16GB 1600 MHz DDR3, 500GB Apple SSD
+
+|              |/             |/react/nashorn|/react/v8     |/react/v8ejs  |
+|:-------------|-------------:|-------------:|-------------:|-------------:|
+| ejs          |        84.40 |        30.10 |        86.39 |            - |   
+| freemarker   |       216.40 |        24.44 |        82.59 |            - |   
+| handlebars   |        26.59 |        38.56 |        95.62 |            - |   
+| jsp          |       117.05 |        24.88 |        93.10 |            - |   
+| thymeleaf    |       138.60 |        25.21 |        89.73 |            - |   
+| velocity     |       248.15 |        24.91 |        83.98 |            - |   
+| v8ejs        |       102.65 |        25.37 |       207.70 |       280.90 |
+
 todos:
 
 - more sophisticated [bench.sh](bench.sh) scripts

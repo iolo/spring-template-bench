@@ -12,36 +12,36 @@ Server Hostname:        localhost
 Server Port:            8080
 
 Document Path:          /
-Document Length:        392 bytes
+Document Length:        1927 bytes
 
 Concurrency Level:      4
-Time taken for tests:   0.715 seconds
+Time taken for tests:   0.854 seconds
 Complete requests:      100
 Failed requests:        0
-Total transferred:      66300 bytes
-HTML transferred:       39200 bytes
-Requests per second:    139.82 [#/sec] (mean)
-Time per request:       28.609 [ms] (mean)
-Time per request:       7.152 [ms] (mean, across all concurrent requests)
-Transfer rate:          90.53 [Kbytes/sec] received
+Total transferred:      219900 bytes
+HTML transferred:       192700 bytes
+Requests per second:    117.05 [#/sec] (mean)
+Time per request:       34.173 [ms] (mean)
+Time per request:       8.543 [ms] (mean, across all concurrent requests)
+Transfer rate:          251.36 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.0      0       0
-Processing:     2   28 123.4      3     630
-Waiting:        2   28 123.0      3     628
-Total:          2   29 123.4      3     631
+Connect:        0    0   0.1      0       1
+Processing:     4   34 137.4      6     704
+Waiting:        4   34 137.2      6     703
+Total:          4   34 137.4      6     704
 
 Percentage of the requests served within a certain time (ms)
-  50%      3
-  66%      4
-  75%      4
-  80%      4
-  90%      5
-  95%      8
-  98%    630
-  99%    631
- 100%    631 (longest request)
+  50%      6
+  66%      7
+  75%      7
+  80%      8
+  90%      9
+  95%     11
+  98%    704
+  99%    704
+ 100%    704 (longest request)
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -54,36 +54,38 @@ Server Hostname:        localhost
 Server Port:            8080
 
 Document Path:          /react/nashorn
-Document Length:        821 bytes
+Document Length:        242 bytes
 
 Concurrency Level:      4
-Time taken for tests:   62.341 seconds
+Time taken for tests:   4.019 seconds
 Complete requests:      100
-Failed requests:        0
-Total transferred:      109700 bytes
-HTML transferred:       82100 bytes
-Requests per second:    1.60 [#/sec] (mean)
-Time per request:       2493.625 [ms] (mean)
-Time per request:       623.406 [ms] (mean, across all concurrent requests)
-Transfer rate:          1.72 [Kbytes/sec] received
+Failed requests:        98
+   (Connect: 0, Receive: 0, Length: 98, Exceptions: 0)
+Non-2xx responses:      11
+Total transferred:      246414 bytes
+HTML transferred:       220012 bytes
+Requests per second:    24.88 [#/sec] (mean)
+Time per request:       160.743 [ms] (mean)
+Time per request:       40.186 [ms] (mean, across all concurrent requests)
+Transfer rate:          59.88 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
 Connect:        0    0   0.0      0       0
-Processing:  1112 2485 855.2   2308    4325
-Waiting:     1112 2485 855.2   2308    4325
-Total:       1112 2485 855.2   2308    4325
+Processing:    26  160 491.7     53    2559
+Waiting:       26  160 491.6     53    2559
+Total:         27  160 491.7     53    2559
 
 Percentage of the requests served within a certain time (ms)
-  50%   2308
-  66%   2889
-  75%   3176
-  80%   3323
-  90%   3725
-  95%   4053
-  98%   4315
-  99%   4325
- 100%   4325 (longest request)
+  50%     53
+  66%     62
+  75%     75
+  80%     94
+  90%    110
+  95%    134
+  98%   2559
+  99%   2559
+ 100%   2559 (longest request)
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -96,36 +98,36 @@ Server Hostname:        localhost
 Server Port:            8080
 
 Document Path:          /react/v8
-Document Length:        821 bytes
+Document Length:        2441 bytes
 
 Concurrency Level:      4
-Time taken for tests:   3.817 seconds
+Time taken for tests:   1.074 seconds
 Complete requests:      100
 Failed requests:        0
-Total transferred:      109700 bytes
-HTML transferred:       82100 bytes
-Requests per second:    26.20 [#/sec] (mean)
-Time per request:       152.673 [ms] (mean)
-Time per request:       38.168 [ms] (mean, across all concurrent requests)
-Transfer rate:          28.07 [Kbytes/sec] received
+Total transferred:      271800 bytes
+HTML transferred:       244100 bytes
+Requests per second:    93.10 [#/sec] (mean)
+Time per request:       42.963 [ms] (mean)
+Time per request:       10.741 [ms] (mean, across all concurrent requests)
+Transfer rate:          247.12 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    1   1.2      0       7
-Processing:   131  150  33.5    141     305
-Waiting:      131  150  33.5    141     305
-Total:        131  151  33.5    142     305
+Connect:        0    0   0.4      0       4
+Processing:     8   42  79.7     16     347
+Waiting:        8   42  79.6     16     346
+Total:          8   42  79.8     16     347
 
 Percentage of the requests served within a certain time (ms)
-  50%    142
-  66%    145
-  75%    147
-  80%    148
-  90%    158
-  95%    219
-  98%    305
-  99%    305
- 100%    305 (longest request)
+  50%     16
+  66%     20
+  75%     23
+  80%     23
+  90%    198
+  95%    250
+  98%    347
+  99%    347
+ 100%    347 (longest request)
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -141,34 +143,34 @@ Document Path:          /react/v8ejs
 Document Length:        123 bytes
 
 Concurrency Level:      4
-Time taken for tests:   0.117 seconds
+Time taken for tests:   0.087 seconds
 Complete requests:      100
 Failed requests:        0
 Non-2xx responses:      100
 Total transferred:      30700 bytes
 HTML transferred:       12300 bytes
-Requests per second:    853.75 [#/sec] (mean)
-Time per request:       4.685 [ms] (mean)
-Time per request:       1.171 [ms] (mean, across all concurrent requests)
-Transfer rate:          255.96 [Kbytes/sec] received
+Requests per second:    1150.75 [#/sec] (mean)
+Time per request:       3.476 [ms] (mean)
+Time per request:       0.869 [ms] (mean, across all concurrent requests)
+Transfer rate:          345.00 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.0      0       0
-Processing:     2    4   8.0      3      44
-Waiting:        2    4   8.0      2      43
-Total:          2    5   8.1      3      44
+Connect:        0    0   0.1      0       0
+Processing:     2    3   0.6      3       5
+Waiting:        2    3   0.6      3       5
+Total:          2    3   0.7      3       5
 
 Percentage of the requests served within a certain time (ms)
   50%      3
   66%      3
-  75%      3
-  80%      3
+  75%      4
+  80%      4
   90%      4
-  95%      6
-  98%     44
-  99%     44
- 100%     44 (longest request)
+  95%      5
+  98%      5
+  99%      5
+ 100%      5 (longest request)
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -184,30 +186,30 @@ Document Path:          /react.html
 Document Length:        503 bytes
 
 Concurrency Level:      4
-Time taken for tests:   0.069 seconds
+Time taken for tests:   0.094 seconds
 Complete requests:      100
 Failed requests:        0
 Total transferred:      75500 bytes
 HTML transferred:       50300 bytes
-Requests per second:    1454.74 [#/sec] (mean)
-Time per request:       2.750 [ms] (mean)
-Time per request:       0.687 [ms] (mean, across all concurrent requests)
-Transfer rate:          1072.58 [Kbytes/sec] received
+Requests per second:    1064.79 [#/sec] (mean)
+Time per request:       3.757 [ms] (mean)
+Time per request:       0.939 [ms] (mean, across all concurrent requests)
+Transfer rate:          785.08 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
 Connect:        0    0   0.1      0       0
-Processing:     1    2   2.2      2      13
-Waiting:        1    2   2.2      2      13
-Total:          1    3   2.2      2      13
+Processing:     1    3   8.0      2      43
+Waiting:        1    3   8.0      1      42
+Total:          1    4   8.0      2      43
 
 Percentage of the requests served within a certain time (ms)
   50%      2
   66%      2
   75%      2
-  80%      3
-  90%      4
-  95%      5
-  98%     13
-  99%     13
- 100%     13 (longest request)
+  80%      2
+  90%      3
+  95%      6
+  98%     43
+  99%     43
+ 100%     43 (longest request)
