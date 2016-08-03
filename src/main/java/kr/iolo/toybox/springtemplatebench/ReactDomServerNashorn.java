@@ -28,11 +28,31 @@ public class ReactDomServerNashorn {
     ObjectMapper objectMapper;
 
     public String render(List<Comment> comments) throws Exception {
-        final ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-        for (final String script : SCRIPTS) {
-            engine.eval(new InputStreamReader(new ClassPathResource(script).getInputStream()));
-        }
-        return (String) engine.eval("renderToString(" + objectMapper.writeValueAsString(comments) + ")");
+        return (String) getScriptEngine().eval("renderToString(" + objectMapper.writeValueAsString(comments) + ")");
         //return (String) ((Invocable) engine).invokeFunction("renderToString", comments);
+    }
+
+    //---------------------------------------------------------
+
+    private ScriptEngine scriptEngine = null;
+
+    private ScriptEngine getScriptEngine() {
+        if (scriptEngine == null) {
+            synchronized (this) {
+                if (scriptEngine == null) {
+                    scriptEngine = new ScriptEngineManager().getEngineByName("nashorn");
+                    for (final String script : SCRIPTS) {
+                        try {
+                            scriptEngine.eval(new InputStreamReader(new ClassPathResource(script).getInputStream()));
+                        } catch (Throwable t) {
+                            System.err.println("failed to load nashorn script: " + script);
+                            t.printStackTrace();
+                            //System.exit(2);
+                        }
+                    }
+                }
+            }
+        }
+        return scriptEngine;
     }
 }

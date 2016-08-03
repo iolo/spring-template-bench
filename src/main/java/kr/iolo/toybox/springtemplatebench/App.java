@@ -89,7 +89,7 @@ public class App {
                     "/server-scripts/nashorn-ejs-render.js"
             );
             bean.setRenderFunction("render");
-            bean.setSharedEngine(false);
+            bean.setSharedEngine(true);
             return bean;
         }
 
