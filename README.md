@@ -22,17 +22,17 @@ profiles:
 
 endpoints:
 
-- server-side template on http://localhost:8080/
-- [react] *server-side* rendering with [nashorn] on http://localhost:8080/react/nashorn
-- [react] *server-side* rendering with [j2v8] on http://localhost:8080/react/v8
-- [react] *better isomorphic* rendering(`v8ejs` profile only) with [j2v8] on http://localhost:8080/react/v8ejs
-- [react] *client-side* rendering on http://localhost:8080/react.html
+- http://localhost:8080/ server-side template, as usual
+- http://localhost:8080/react/nashorn [react] rendering on server with [nashorn] 
+- http://localhost:8080/react/v8 [react] rendering on server with [j2v8] (NOTE: [ScriptTemplateView] still uses [nashorn])
+- http://localhost:8080/react/v8ejs pure v8 template + react rendering with [j2v8] **(`v8ejs` profile only)**
+- http://localhost:8080/react.html [react] rendering on browser
 - ...
 
 result on my laptop:
 
 - MacBook Pro (Retina, 15-inch, Mid 2014)
-- 2.5 GHz Intel Core i7, : 16GB 1600 MHz DDR3, 500GB Apple SSD
+- 2.5 GHz Intel Core i7, 16GB 1600 MHz DDR3, 500GB Apple SSD
 
 |              |/             |/react/nashorn|/react/v8     |/react/v8ejs  |
 |:-------------|-------------:|-------------:|-------------:|-------------:|
@@ -44,9 +44,12 @@ result on my laptop:
 | velocity     |       248.15 |        24.91 |        83.98 |            - |   
 | v8ejs        |       102.65 |        25.37 |       207.70 |       280.90 |
 
+* request/sec (higher is better)
+
 todos:
 
-- more sophisticated [bench.sh](bench.sh) scripts
+- more sophisticated [bench.sh](bench.sh) scripts including browser rendering time.
+- more practical templates
 - more template engines
 - ...
 
